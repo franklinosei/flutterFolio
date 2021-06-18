@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final kHeaderColor = Color.fromRGBO(30, 136, 229, 1);
+final kHeaderColor = Colors.black;
 final kButtonColor = Color.fromRGBO(255, 87, 34, 1);
 final kButtonHighlightColor = Color.fromRGBO(255, 20, 67, 1);
 final kSectionBackground = Colors.blueGrey[400];

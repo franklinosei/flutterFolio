@@ -58,9 +58,9 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
-  // void _scrollToAbout() {
+  // void _scrollToPortfolio() {
   //   Scrollable.ensureVisible(
-  //     _aboutGlobaleKey.currentContext,
+  //     _portfolioGlobalKey.currentContext,
   //     duration: const Duration(seconds: 1),
   //   );
   // }
@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
         slivers: [
           SliverAppBar(
               titleSpacing: 0,
-              toolbarHeight: 50,
+              toolbarHeight: 60,
               pinned: true,
               elevation: 10.0,
               floating: true,
@@ -104,9 +104,9 @@ class _HomeState extends State<Home> {
                   ),
                 ),
 
-                title: Text('Franklin Osei\nAi Engineer || Data Scientist'),
+                title: Text('Franklin Osei\n\nAi Engineer || Data Scientist\n'),
                 titlePadding:
-                    EdgeInsets.only(bottom: 20.0, top: 10.0, left: 120.0),
+                    EdgeInsets.only(bottom: 15.0, top: 10.0, left: 120.0),
               ),
               actions: [
                 Row(
@@ -283,12 +283,12 @@ class _HomeState extends State<Home> {
         slivers: [
           SliverAppBar(
             titleSpacing: 0,
-            toolbarHeight: 50,
+            toolbarHeight: 30,
             // pinned: true,
             elevation: 10.0,
             floating: true,
             backgroundColor: kHeaderColor,
-            expandedHeight: MediaQuery.of(context).size.height,
+            expandedHeight: MediaQuery.of(context).size.height * 0.90,
             flexibleSpace: FlexibleSpaceBar(
               // key: _flexHeaderGlobalKey,
               background: DecoratedBox(
@@ -307,9 +307,9 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
-              title: Text('Franklin Osei\nAi Engineer || Data Scientist'),
+              title: Text('Franklin Osei\n\nAi Engineer || Data Scientist\n'),
               titlePadding:
-                  EdgeInsets.only(bottom: 20.0, top: 10.0, left: 120.0),
+                  EdgeInsets.only(bottom: 10.0, top: 10.0, left: 120.0),
             ),
             // actions: [
             //   Row(
