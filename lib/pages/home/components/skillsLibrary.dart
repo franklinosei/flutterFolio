@@ -8,7 +8,7 @@ class SkillsLibrary extends StatelessWidget {
     return Container(
       child: Text(
         'Skills Library',
-        style: TextStyle(fontSize: 220),
+        style: TextStyle(fontSize: 20),
       ),
     );
   }
