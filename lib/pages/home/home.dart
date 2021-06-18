@@ -58,6 +58,13 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
+  // void _scrollToAbout() {
+  //   Scrollable.ensureVisible(
+  //     _aboutGlobaleKey.currentContext,
+  //     duration: const Duration(seconds: 1),
+  //   );
+  // }
+
   Widget _buildDesktop(
     BuildContext context,
     ScrollController controller,
@@ -73,8 +80,8 @@ class _HomeState extends State<Home> {
               pinned: true,
               elevation: 10.0,
               floating: true,
-              backgroundColor: kHeaderColor,
-              expandedHeight: MediaQuery.of(context).size.height * 0.8,
+              backgroundColor: Colors.black,
+              expandedHeight: MediaQuery.of(context).size.height * 0.9,
               flexibleSpace: FlexibleSpaceBar(
                 // key: _flexHeaderGlobalKey,
                 background: DecoratedBox(
@@ -93,7 +100,7 @@ class _HomeState extends State<Home> {
                   child: Image.asset(
                     'images/header_bg.jpg',
                     fit: BoxFit.cover,
-                    key: _headerKey,
+                    // key: _headerKey,
                   ),
                 ),
 
@@ -110,7 +117,7 @@ class _HomeState extends State<Home> {
                       child: Text(
                         'About',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: kWhiteColor, fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
@@ -122,7 +129,7 @@ class _HomeState extends State<Home> {
                       child: Text(
                         'Portfolio',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: kWhiteColor, fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
@@ -134,7 +141,7 @@ class _HomeState extends State<Home> {
                       child: Text(
                         'Contact Me',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: kWhiteColor, fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
@@ -146,16 +153,16 @@ class _HomeState extends State<Home> {
                       // color: Colors.orange,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
-                        side: BorderSide(color: Colors.orange),
+                        side: BorderSide(color: kButtonColor),
                       ),
                       child: Text(
                         'Resume',
                         style: TextStyle(
-                            color: Colors.orange, fontWeight: FontWeight.bold),
+                            color: kButtonColor, fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 90,
                     )
                   ],
                 )
@@ -166,50 +173,122 @@ class _HomeState extends State<Home> {
     );
   }
 
-  List<Widget> _slivers() => [
-        SliverToBoxAdapter(
-          key: _portfolioGlobalKey,
-          child: Portfolio(),
-        ),
-        SliverToBoxAdapter(
-          key: _areasOfInterestGlobalKey,
-          child: AreasOfInterest(),
-        ),
-        SliverToBoxAdapter(
-          key: _LibrariesGlobalKey,
-          child: Libraries(),
-        ),
-        SliverToBoxAdapter(
-          key: _skillsLibrariesGlobalKey,
-          child: SkillsLibrary(),
-        ),
-        SliverToBoxAdapter(
-          key: _aboutGlobaleKey,
-          child: About(),
-        ),
-        SliverToBoxAdapter(
-          // key: _contactUsGlobaleKey,
-          child: Contact(),
-        ),
-        SliverToBoxAdapter(
-          child: Footer(),
-        ),
-      ];
-
   Widget _buildTablet(
       BuildContext context, ScrollController controller, GlobalKey _headerKey) {
     return Scaffold(
+      drawer: Drawer(
+        elevation: 5.0,
+        child: Column(children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.90,
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/drawer_header.jpg"),
+                        fit: BoxFit.cover)),
+                child: Text(""),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Expanded(
+              flex: 2,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.30,
+                child: ListView(children: [
+                  MaterialButton(
+                    highlightColor: kButtonHighlightColor,
+                    elevation: 10.0,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(
+                      'About',
+                      style: TextStyle(color: kWhiteColor),
+                    ),
+                    height: 60.0,
+                    padding: EdgeInsets.all(10),
+                    color: kButtonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      // side: BorderSide(color: Colors.orange),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  MaterialButton(
+                    highlightColor: kButtonHighlightColor,
+                    elevation: 10.0,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child:
+                        Text('Portfolio', style: TextStyle(color: kWhiteColor)),
+                    height: 60.0,
+                    padding: EdgeInsets.all(10),
+                    color: kButtonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      // side: BorderSide(color: Colors.orange),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  MaterialButton(
+                    highlightColor: kButtonHighlightColor,
+                    elevation: 10.0,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('Contact Me',
+                        style: TextStyle(color: kWhiteColor)),
+                    height: 60.0,
+                    padding: EdgeInsets.all(10),
+                    color: kButtonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      // side: BorderSide(color: Colors.orange),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  MaterialButton(
+                    elevation: 10.0,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child:
+                        Text('Resume', style: TextStyle(color: kButtonColor)),
+                    height: 70.0,
+                    padding: EdgeInsets.all(10),
+                    color: Colors.grey[200],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      side: BorderSide(color: kButtonColor),
+                    ),
+                  ),
+                ]),
+              )),
+        ]),
+      ),
       body: CustomScrollView(
         controller: controller,
         slivers: [
           SliverAppBar(
             titleSpacing: 0,
             toolbarHeight: 50,
-            pinned: true,
+            // pinned: true,
             elevation: 10.0,
             floating: true,
             backgroundColor: kHeaderColor,
-            expandedHeight: MediaQuery.of(context).size.height * 0.8,
+            expandedHeight: MediaQuery.of(context).size.height,
             flexibleSpace: FlexibleSpaceBar(
               // key: _flexHeaderGlobalKey,
               background: DecoratedBox(
@@ -251,6 +330,106 @@ class _HomeState extends State<Home> {
   Widget _buildMobile(
       BuildContext context, ScrollController controller, GlobalKey _headerKey) {
     return Scaffold(
+      drawer: Drawer(
+        elevation: 5.0,
+        child: Column(children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.85,
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/drawer_header.jpg"),
+                        fit: BoxFit.cover)),
+                child: Text(""),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Expanded(
+              flex: 2,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.70,
+                child: ListView(children: [
+                  MaterialButton(
+                    highlightColor: Colors.blue,
+                    elevation: 10.0,
+                    onPressed: () {
+                      _scrollToAbout();
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('About', style: TextStyle(color: kWhiteColor)),
+                    height: 60.0,
+                    padding: EdgeInsets.all(10),
+                    color: kButtonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      // side: BorderSide(color: Colors.orange),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  MaterialButton(
+                    highlightColor: kButtonHighlightColor,
+                    elevation: 10.0,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child:
+                        Text('Portfolio', style: TextStyle(color: kWhiteColor)),
+                    height: 60.0,
+                    padding: EdgeInsets.all(10),
+                    color: kButtonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      // side: BorderSide(color: Colors.orange),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  MaterialButton(
+                    highlightColor: Colors.blue,
+                    elevation: 10.0,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('Contact Me',
+                        style: TextStyle(color: kWhiteColor)),
+                    height: 60.0,
+                    padding: EdgeInsets.all(10),
+                    color: kButtonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      // side: BorderSide(color: Colors.orange),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  MaterialButton(
+                    elevation: 10.0,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child:
+                        Text('Resume', style: TextStyle(color: kButtonColor)),
+                    height: 70.0,
+                    padding: EdgeInsets.all(10),
+                    color: Colors.grey[200],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      side: BorderSide(color: kButtonColor),
+                    ),
+                  ),
+                ]),
+              )),
+        ]),
+      ),
       body: CustomScrollView(
         controller: controller,
         slivers: [
@@ -261,7 +440,7 @@ class _HomeState extends State<Home> {
             elevation: 10.0,
             floating: true,
             backgroundColor: kHeaderColor,
-            expandedHeight: MediaQuery.of(context).size.height * 0.8,
+            expandedHeight: MediaQuery.of(context).size.height,
             flexibleSpace: FlexibleSpaceBar(
               // key: _flexHeaderGlobalKey,
               background: DecoratedBox(
@@ -280,9 +459,12 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
-              title: Text('Franklin Osei\n\nAi Engineer || Data Scientist'),
-              titlePadding:
-                  EdgeInsets.only(bottom: 10.0, top: 10.0, left: 20.0),
+              title: Text('Franklin Osei\n\nAi Engineer || Data Scientist\n\n'),
+              centerTitle: true,
+              titlePadding: EdgeInsets.only(
+                  bottom: 10.0,
+                  top: 10.0,
+                  left: MediaQuery.of(context).size.width * 0.25),
             ),
           ),
           ..._slivers(),
@@ -291,11 +473,35 @@ class _HomeState extends State<Home> {
     );
   }
 
-  // void _scrollToHeader() {
-  //   Scrollable.ensureVisible(
-  //     _flexHeaderGlobalKey.currentContext,
-  //     duration: const Duration(seconds: 1),
-  //   );
-  // }
+  _slivers() => [
+        SliverToBoxAdapter(
+          key: _portfolioGlobalKey,
+          child: PortfolioSection(),
+        ),
+        SliverToBoxAdapter(
+          key: _areasOfInterestGlobalKey,
+          child: AreasOfInterest(),
+        ),
+        SliverToBoxAdapter(
+          key: _LibrariesGlobalKey,
+          child: Libraries(),
+        ),
+        SliverToBoxAdapter(
+          key: _skillsLibrariesGlobalKey,
+          child: SkillsLibrary(),
+        ),
+        SliverToBoxAdapter(
+          key: _aboutGlobaleKey,
+          child: About(),
+        ),
+        SliverToBoxAdapter(
+          // key: _contactUsGlobaleKey,
+          child: Contact(),
+        ),
+        SliverToBoxAdapter(
+          child: Footer(),
+        ),
+      ];
 
+  void _scrollToAbout() {}
 }

@@ -6,7 +6,10 @@ class SkillsLibrary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Skills Library'),
+      child: Text(
+        'Skills Library',
+        style: TextStyle(fontSize: 220),
+      ),
     );
   }
 }
