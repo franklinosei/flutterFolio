@@ -14,6 +14,7 @@ class ResponsiveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     final double screenWidth = MediaQuery.of(context).size.width;
 
     Widget screen = desktopScreen;

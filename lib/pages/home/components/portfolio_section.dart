@@ -89,10 +89,13 @@ class PortfolioSection extends ConsumerWidget {
               // shape: RoundedRectangleBorder(
               //     borderRadius: BorderRadius.all(Radius.circular(20.0))),
               height: 0,
-              elevation: 10,
-              hoverColor: kWhiteColor,
-              // color: kButtonColor,
-              onPressed: () {},
+              elevation: 0,
+              // hoverColor: ,
+              color: Colors.transparent,
+              hoverElevation: 0,
+              onPressed: () {
+                Navigator.pushNamed(context, '/portfolio');
+              },
               child: Text(
                 'View more Projects',
                 style: TextStyle(color: kButtonColor),
@@ -113,7 +116,9 @@ class PortfolioSection extends ConsumerWidget {
       }, loading: () {
         return CircularProgressIndicator();
       }, error: (err, _) {
-        return Text('An error occurred');
+        return CircularProgressIndicator(
+          color: kButtonColor,
+        );
       })
     ]);
   }
@@ -191,7 +196,9 @@ class PortfolioSection extends ConsumerWidget {
               elevation: 10,
               hoverColor: kWhiteColor,
               // color: kButtonColor,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/portfolio');
+              },
               child: Text(
                 'View more Projects',
                 style: TextStyle(color: kButtonColor),
@@ -212,7 +219,9 @@ class PortfolioSection extends ConsumerWidget {
       }, loading: () {
         return CircularProgressIndicator();
       }, error: (err, _) {
-        return Text('An error occurred');
+        return CircularProgressIndicator(
+          color: kButtonColor,
+        );
       })
     ]);
   }
@@ -295,7 +304,9 @@ class PortfolioSection extends ConsumerWidget {
               elevation: 10,
               hoverColor: kWhiteColor,
               // color: kButtonColor,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/portfolio');
+              },
               child: Text(
                 'View more Projects',
                 style: TextStyle(color: kButtonColor),
@@ -316,7 +327,9 @@ class PortfolioSection extends ConsumerWidget {
       }, loading: () {
         return CircularProgressIndicator();
       }, error: (err, _) {
-        return Text('An error occurred');
+        return CircularProgressIndicator(
+          color: kButtonColor,
+        );
       })
     ]);
   }

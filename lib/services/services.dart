@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'package:portfolio/models/projects.dart';
 
 class GetProjects {
-  // bool isLoaded = false;
 
   Future<List<Project>> fetchProjects() async {
     final response = await http
