@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/constants/constants.dart';
 import 'package:portfolio/pages/home/components/about_section.dart';
@@ -20,18 +21,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final _flexHeaderGlobalKey = GlobalKey();
   final _headerGlobalKey = GlobalKey();
   final _aboutGlobaleKey = GlobalKey();
   final _portfolioGlobalKey = GlobalKey();
   final _contactUsGlobaleKey = GlobalKey();
-  final _flexHeaderGlobalKey = GlobalKey();
+  final _footerGlobalKey = GlobalKey();
   final _areasOfInterestGlobalKey = GlobalKey();
   final _skillsLibrariesGlobalKey = GlobalKey();
-  final _LibrariesGlobalKey = GlobalKey();
+  final _librariesGlobalKey = GlobalKey();
 
   final _scrollController = ScrollController();
 
   final _fabStream = StreamController<bool>();
+
+  bool _isScrolled = false;
 
   @override
   void initState() {
@@ -39,6 +43,30 @@ class _HomeState extends State<Home> {
     _scrollController.addListener(() {
       _fabStream.sink.add(_scrollController.offset > 500);
     });
+  }
+
+  Widget _buildFab() {
+    return StreamBuilder<bool>(
+      initialData: false,
+      stream: _fabStream.stream,
+      builder: (_, data) {
+        bool showFab = data.hasData && data.data == true;
+        return AnimatedOpacity(
+          opacity: showFab ? 1 : 0,
+          duration: const Duration(milliseconds: 500),
+          child: FloatingActionButton(
+            backgroundColor: kButtonColor,
+            onPressed: showFab
+                ? () => _scrollController.animateTo(0,
+                    duration: Duration(seconds: 1),
+                    curve: Curves.fastLinearToSlowEaseIn)
+                : null, // make sure user cannot click when button hidden
+            mini: true,
+            child: Icon(FontAwesomeIcons.arrowAltCircleUp),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -61,7 +89,7 @@ class _HomeState extends State<Home> {
 
   // void _scrollToPortfolio() {
   //   Scrollable.ensureVisible(
-  //     _portfolioGlobalKey.currentContext,
+  //     _aboutGlobaleKey.currentContext,
   //     duration: const Duration(seconds: 1),
   //   );
   // }
@@ -72,6 +100,7 @@ class _HomeState extends State<Home> {
     GlobalKey _headerKey,
   ) {
     return Scaffold(
+      floatingActionButton: _buildFab(),
       body: CustomScrollView(
         controller: controller,
         slivers: [
@@ -108,7 +137,11 @@ class _HomeState extends State<Home> {
                 title: MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      _scrollController.animateTo(0,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
+                    },
                     child: RichText(
                       text: TextSpan(
                         children: [
@@ -180,8 +213,14 @@ class _HomeState extends State<Home> {
                 Row(
                   children: <Widget>[
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Scrollable?.ensureVisible(
+                            _aboutGlobaleKey.currentContext!,
+                            duration: Duration(seconds: 3),
+                            curve: Curves.fastLinearToSlowEaseIn);
+                      },
                       highlightColor: Colors.white60,
+                      focusColor: kButtonColor,
                       child: Text(
                         'About',
                         style: TextStyle(
@@ -192,7 +231,12 @@ class _HomeState extends State<Home> {
                       width: 30,
                     ),
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Scrollable?.ensureVisible(
+                            _portfolioGlobalKey.currentContext!,
+                            duration: Duration(seconds: 1),
+                            curve: Curves.fastLinearToSlowEaseIn);
+                      },
                       highlightColor: Colors.white60,
                       child: Text(
                         'Portfolio',
@@ -204,7 +248,12 @@ class _HomeState extends State<Home> {
                       width: 30,
                     ),
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Scrollable?.ensureVisible(
+                            _contactUsGlobaleKey.currentContext!,
+                            duration: Duration(seconds: 1),
+                            curve: Curves.fastLinearToSlowEaseIn);
+                      },
                       highlightColor: Colors.white60,
                       child: Text(
                         'Contact Me',
@@ -244,6 +293,7 @@ class _HomeState extends State<Home> {
   Widget _buildTablet(
       BuildContext context, ScrollController controller, GlobalKey _headerKey) {
     return Scaffold(
+      floatingActionButton: _buildFab(),
       drawer: Drawer(
         elevation: 5.0,
         child: Column(children: [
@@ -272,6 +322,10 @@ class _HomeState extends State<Home> {
                     highlightColor: kButtonHighlightColor,
                     elevation: 10.0,
                     onPressed: () {
+                      Scrollable?.ensureVisible(
+                          _aboutGlobaleKey.currentContext!,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
                       Navigator.of(context).pop();
                     },
                     child: Text(
@@ -293,6 +347,10 @@ class _HomeState extends State<Home> {
                     highlightColor: kButtonHighlightColor,
                     elevation: 10.0,
                     onPressed: () {
+                      Scrollable?.ensureVisible(
+                          _portfolioGlobalKey.currentContext!,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
                       Navigator.of(context).pop();
                     },
                     child:
@@ -312,6 +370,10 @@ class _HomeState extends State<Home> {
                     highlightColor: kButtonHighlightColor,
                     elevation: 10.0,
                     onPressed: () {
+                      Scrollable?.ensureVisible(
+                          _contactUsGlobaleKey.currentContext!,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
                       Navigator.of(context).pop();
                     },
                     child: Text('Contact Me',
@@ -378,7 +440,11 @@ class _HomeState extends State<Home> {
               title: MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                     _scrollController.animateTo(0,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
+                  },
                   child: RichText(
                     text: TextSpan(
                       children: [
@@ -467,6 +533,7 @@ class _HomeState extends State<Home> {
   Widget _buildMobile(
       BuildContext context, ScrollController controller, GlobalKey _headerKey) {
     return Scaffold(
+      floatingActionButton: _buildFab(),
       drawer: Drawer(
         elevation: 5.0,
         child: Column(children: [
@@ -495,7 +562,10 @@ class _HomeState extends State<Home> {
                     highlightColor: Colors.blue,
                     elevation: 10.0,
                     onPressed: () {
-                      _scrollToAbout();
+                      Scrollable?.ensureVisible(
+                          _aboutGlobaleKey.currentContext!,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
                       Navigator.of(context).pop();
                     },
                     child: Text('About', style: TextStyle(color: kWhiteColor)),
@@ -514,6 +584,10 @@ class _HomeState extends State<Home> {
                     highlightColor: kButtonHighlightColor,
                     elevation: 10.0,
                     onPressed: () {
+                      Scrollable?.ensureVisible(
+                          _portfolioGlobalKey.currentContext!,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
                       Navigator.of(context).pop();
                     },
                     child:
@@ -533,6 +607,10 @@ class _HomeState extends State<Home> {
                     highlightColor: Colors.blue,
                     elevation: 10.0,
                     onPressed: () {
+                      Scrollable?.ensureVisible(
+                          _contactUsGlobaleKey.currentContext!,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
                       Navigator.of(context).pop();
                     },
                     child: Text('Contact Me',
@@ -577,7 +655,7 @@ class _HomeState extends State<Home> {
             elevation: 10.0,
             floating: true,
             backgroundColor: kHeaderColor,
-            expandedHeight: MediaQuery.of(context).size.height*0.98,
+            expandedHeight: MediaQuery.of(context).size.height,
             flexibleSpace: FlexibleSpaceBar(
               // key: _flexHeaderGlobalKey,
               background: DecoratedBox(
@@ -599,7 +677,11 @@ class _HomeState extends State<Home> {
               title: MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                     _scrollController.animateTo(0,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
+                  },
                   child: RichText(
                     text: TextSpan(
                       children: [
@@ -688,7 +770,7 @@ class _HomeState extends State<Home> {
           child: AreasOfInterest(),
         ),
         SliverToBoxAdapter(
-          key: _LibrariesGlobalKey,
+          key: _librariesGlobalKey,
           child: Libraries(),
         ),
         SliverToBoxAdapter(
@@ -700,10 +782,11 @@ class _HomeState extends State<Home> {
           child: About(),
         ),
         SliverToBoxAdapter(
-          // key: _contactUsGlobaleKey,
+          key: _contactUsGlobaleKey,
           child: Contact(),
         ),
         SliverToBoxAdapter(
+          key: _footerGlobalKey,
           child: Footer(),
         ),
       ];

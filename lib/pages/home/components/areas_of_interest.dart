@@ -17,7 +17,7 @@ class AreasOfInterest extends StatelessWidget {
   Widget _buildDesktopScreen(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 40, right: 40, left: 40, bottom: 80),
-      margin: EdgeInsets.only(top: 40),
+      // margin: EdgeInsets.only(top: 40),
       // height: MediaQuery.of(context).size.width * 0.35,
       decoration: BoxDecoration(color: kSectionBackground),
 
@@ -206,7 +206,10 @@ class AreasOfInterest extends StatelessWidget {
               //1
               Column(
                 children: <Widget>[
-                  Icon(FontAwesomeIcons.robot, size: 40,),
+                  Icon(
+                    FontAwesomeIcons.robot,
+                    size: 40,
+                  ),
                   SizedBox(
                     height: 25,
                   ),
@@ -226,7 +229,10 @@ class AreasOfInterest extends StatelessWidget {
               //2
               Column(
                 children: <Widget>[
-                  Icon(FontAwesomeIcons.mobile, size: 40,),
+                  Icon(
+                    FontAwesomeIcons.mobile,
+                    size: 40,
+                  ),
                   SizedBox(
                     height: 25,
                   ),
@@ -249,7 +255,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 80,
                   ),
-                  Icon(FontAwesomeIcons.americanSignLanguageInterpreting, size: 40,),
+                  Icon(
+                    FontAwesomeIcons.americanSignLanguageInterpreting,
+                    size: 40,
+                  ),
                   SizedBox(
                     height: 25,
                   ),
@@ -272,7 +281,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 80,
                   ),
-                  Icon(FontAwesomeIcons.cogs, size: 40,),
+                  Icon(
+                    FontAwesomeIcons.cogs,
+                    size: 40,
+                  ),
                   SizedBox(
                     height: 25,
                   ),
@@ -294,7 +306,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 80,
                   ),
-                  Icon(FontAwesomeIcons.cloudDownloadAlt, size: 40,),
+                  Icon(
+                    FontAwesomeIcons.cloudDownloadAlt,
+                    size: 40,
+                  ),
                   SizedBox(
                     height: 25,
                   ),
@@ -316,7 +331,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 80,
                   ),
-                  Icon(FontAwesomeIcons.laptopCode, size: 40,),
+                  Icon(
+                    FontAwesomeIcons.laptopCode,
+                    size: 40,
+                  ),
                   SizedBox(
                     height: 25,
                   ),
@@ -363,7 +381,10 @@ class AreasOfInterest extends StatelessWidget {
               //1
               Column(
                 children: <Widget>[
-                  Icon(FontAwesomeIcons.robot, size: 35,),
+                  Icon(
+                    FontAwesomeIcons.robot,
+                    size: 35,
+                  ),
                   SizedBox(
                     height: 15,
                   ),
@@ -386,7 +407,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 65,
                   ),
-                  Icon(FontAwesomeIcons.mobile, size: 35,),
+                  Icon(
+                    FontAwesomeIcons.mobile,
+                    size: 35,
+                  ),
                   SizedBox(
                     height: 15,
                   ),
@@ -410,7 +434,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 65,
                   ),
-                  Icon(FontAwesomeIcons.americanSignLanguageInterpreting, size: 35,),
+                  Icon(
+                    FontAwesomeIcons.americanSignLanguageInterpreting,
+                    size: 35,
+                  ),
                   SizedBox(
                     height: 15,
                   ),
@@ -433,7 +460,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 65,
                   ),
-                  Icon(FontAwesomeIcons.cogs, size: 35,),
+                  Icon(
+                    FontAwesomeIcons.cogs,
+                    size: 35,
+                  ),
                   SizedBox(
                     height: 15,
                   ),
@@ -455,7 +485,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 65,
                   ),
-                  Icon(FontAwesomeIcons.cloudDownloadAlt, size: 35,),
+                  Icon(
+                    FontAwesomeIcons.cloudDownloadAlt,
+                    size: 35,
+                  ),
                   SizedBox(
                     height: 15,
                   ),
@@ -477,7 +510,10 @@ class AreasOfInterest extends StatelessWidget {
                   SizedBox(
                     height: 65,
                   ),
-                  Icon(FontAwesomeIcons.laptopCode, size: 35,),
+                  Icon(
+                    FontAwesomeIcons.laptopCode,
+                    size: 35,
+                  ),
                   SizedBox(
                     height: 15,
                   ),
