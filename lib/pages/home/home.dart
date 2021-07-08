@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                     curve: Curves.fastLinearToSlowEaseIn)
                 : null, // make sure user cannot click when button hidden
             mini: true,
-            child: Icon(FontAwesomeIcons.arrowAltCircleUp),
+            child: Icon(FontAwesomeIcons.arrowUp),
           ),
         );
       },
@@ -128,7 +128,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   child: Image.asset(
-                    'images/header_bg.jpg',
+                    'assets/images/header_bg.jpg',
                     fit: BoxFit.cover,
                     // key: _headerKey,
                   ),
@@ -257,6 +257,20 @@ class _HomeState extends State<Home> {
                       highlightColor: Colors.white60,
                       child: Text(
                         'Contact Me',
+                        style: TextStyle(
+                            color: kWhiteColor, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    MaterialButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/portfolio');
+                      },
+                      highlightColor: Colors.white60,
+                      child: Text(
+                        'All Projects',
                         style: TextStyle(
                             color: kWhiteColor, fontWeight: FontWeight.bold),
                       ),
@@ -408,124 +422,130 @@ class _HomeState extends State<Home> {
               )),
         ]),
       ),
-      body: CustomScrollView(
-        controller: controller,
-        slivers: [
-          SliverAppBar(
-            titleSpacing: 0,
-            toolbarHeight: 60,
-            pinned: true,
-            elevation: 10.0,
-            floating: true,
-            backgroundColor: kHeaderColor,
-            expandedHeight: MediaQuery.of(context).size.height * 0.90,
-            flexibleSpace: FlexibleSpaceBar(
-              // key: _flexHeaderGlobalKey,
-              background: DecoratedBox(
-                position: DecorationPosition.foreground,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [Colors.black, Colors.black87, Colors.transparent],
-                  ),
-                ),
-                child: Image.asset(
-                  'images/header_bg.jpg',
-                  fit: BoxFit.cover,
-                  key: _headerKey,
-                ),
-              ),
-
-              title: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                     _scrollController.animateTo(0,
-                          duration: Duration(seconds: 1),
-                          curve: Curves.fastLinearToSlowEaseIn);
-                  },
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: " < ",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "Franklin",
-                          style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 26.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: " Osei",
-                          style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 26.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: " /",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: ">",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "\n\n\tAi Engineer\n\tMobile Developer",
-                          style: GoogleFonts.poppins(
-                            color: kWhiteColor,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "\n\n\n",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+      body: SafeArea(
+        child: CustomScrollView(
+          controller: controller,
+          slivers: [
+            SliverAppBar(
+              titleSpacing: 0,
+              toolbarHeight: 60,
+              pinned: true,
+              elevation: 10.0,
+              // floating: true,
+              backgroundColor: kHeaderColor,
+              expandedHeight: MediaQuery.of(context).size.height * 0.90,
+              flexibleSpace: FlexibleSpaceBar(
+                // key: _flexHeaderGlobalKey,
+                background: DecoratedBox(
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.black,
+                        Colors.black87,
+                        Colors.transparent
                       ],
                     ),
                   ),
+                  child: Image.asset(
+                    'assets/images/header_bg.jpg',
+                    fit: BoxFit.cover,
+                    key: _headerKey,
+                  ),
                 ),
+
+                title: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      _scrollController.animateTo(0,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
+                    },
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: " < ",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "Franklin",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: " Osei",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: " /",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: ">",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "\n\n\tAi Engineer\n\tMobile Developer",
+                            style: GoogleFonts.poppins(
+                              color: kWhiteColor,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "\n\n\n",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                titlePadding: EdgeInsets.only(
+                    bottom: 10.0,
+                    top: 10.0,
+                    left: MediaQuery.of(context).size.width * 0.25),
               ),
-              titlePadding: EdgeInsets.only(
-                  bottom: 10.0,
-                  top: 10.0,
-                  left: MediaQuery.of(context).size.width * 0.25),
+              // actions: [
+              //   Row(
+              //     children: <Widget>[
+              //       MaterialButton(
+              //         onPressed: () {},
+              //       )
+              //     ],
+              //   )
+              // ],
             ),
-            // actions: [
-            //   Row(
-            //     children: <Widget>[
-            //       MaterialButton(
-            //         onPressed: () {},
-            //       )
-            //     ],
-            //   )
-            // ],
-          ),
-          ..._slivers(),
-        ],
+            ..._slivers(),
+          ],
+        ),
       ),
     );
   }
@@ -645,117 +665,123 @@ class _HomeState extends State<Home> {
               )),
         ]),
       ),
-      body: CustomScrollView(
-        controller: controller,
-        slivers: [
-          SliverAppBar(
-            titleSpacing: 1.0,
-            toolbarHeight: 50,
-            pinned: true,
-            elevation: 10.0,
-            floating: true,
-            backgroundColor: kHeaderColor,
-            expandedHeight: MediaQuery.of(context).size.height,
-            flexibleSpace: FlexibleSpaceBar(
-              // key: _flexHeaderGlobalKey,
-              background: DecoratedBox(
-                position: DecorationPosition.foreground,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [Colors.black, Colors.black87, Colors.transparent],
-                  ),
-                ),
-                child: Image.asset(
-                  'images/header_bg.jpg',
-                  fit: BoxFit.cover,
-                  key: _headerKey,
-                ),
-              ),
-
-              title: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                     _scrollController.animateTo(0,
-                          duration: Duration(seconds: 1),
-                          curve: Curves.fastLinearToSlowEaseIn);
-                  },
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: " < ",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "Franklin",
-                          style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: " Osei",
-                          style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: " /",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: ">",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(text: '\n\t\t|\t|'),
-                        TextSpan(
-                          text: "\n\n\tAi Engineer\n Mobile Developer",
-                          style: GoogleFonts.poppins(
-                            color: kWhiteColor,
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "\n\n\n\n",
-                          style: GoogleFonts.poppins(
-                            color: kButtonColor,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+      body: SafeArea(
+        child: CustomScrollView(
+          controller: controller,
+          slivers: [
+            SliverAppBar(
+              titleSpacing: 2.0,
+              toolbarHeight: 50,
+              pinned: true,
+              elevation: 10.0,
+              // floating: true,
+              backgroundColor: kHeaderColor,
+              expandedHeight: MediaQuery.of(context).size.height,
+              flexibleSpace: FlexibleSpaceBar(
+                // key: _flexHeaderGlobalKey,
+                background: DecoratedBox(
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.black,
+                        Colors.black87,
+                        Colors.transparent
                       ],
                     ),
                   ),
+                  child: Image.asset(
+                    'assets/images/header_bg.jpg',
+                    fit: BoxFit.cover,
+                    key: _headerKey,
+                  ),
                 ),
+
+                title: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      _scrollController.animateTo(0,
+                          duration: Duration(seconds: 1),
+                          curve: Curves.fastLinearToSlowEaseIn);
+                    },
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: " < ",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "Franklin",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: " Osei",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: " /",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: ">",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          // TextSpan(text: '\n\t\t|\t          |'),
+                          TextSpan(
+                            text: "\n\n\n\tAi Engineer\n Mobile Developer",
+                            style: GoogleFonts.poppins(
+                              color: kWhiteColor,
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "\n\n\n\n",
+                            style: GoogleFonts.poppins(
+                              color: kButtonColor,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                centerTitle: true,
+                titlePadding: EdgeInsets.only(
+                    bottom: 10.0,
+                    top: MediaQuery.of(context).size.width * 0.05,
+                    left: MediaQuery.of(context).size.width * 0.05),
               ),
-              centerTitle: true,
-              titlePadding: EdgeInsets.only(
-                  bottom: 10.0,
-                  top: 10.0,
-                  left: MediaQuery.of(context).size.width * 0.05),
             ),
-          ),
-          ..._slivers(),
-        ],
+            ..._slivers(),
+          ],
+        ),
       ),
     );
   }
@@ -770,12 +796,12 @@ class _HomeState extends State<Home> {
           child: AreasOfInterest(),
         ),
         SliverToBoxAdapter(
-          key: _librariesGlobalKey,
-          child: Libraries(),
-        ),
-        SliverToBoxAdapter(
           key: _skillsLibrariesGlobalKey,
           child: SkillsLibrary(),
+        ),
+        SliverToBoxAdapter(
+          key: _librariesGlobalKey,
+          child: Libraries(),
         ),
         SliverToBoxAdapter(
           key: _aboutGlobaleKey,
@@ -790,6 +816,4 @@ class _HomeState extends State<Home> {
           child: Footer(),
         ),
       ];
-
-  void _scrollToAbout() {}
 }

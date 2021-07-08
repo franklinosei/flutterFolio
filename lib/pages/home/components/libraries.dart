@@ -23,57 +23,57 @@ class Libraries extends StatelessWidget {
           spacing: 30,
           children: [
             Image(
-              image: AssetImage('/images/tf.png'),
+              image: AssetImage('assets/images/tf.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/python.png'),
+              image: AssetImage('assets/images/python.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/dart.png'),
+              image: AssetImage('assets/images/dart.png'),
               height: 80,
               width: 120,
             ),
             Image(
-              image: AssetImage('/images/sklearn.png'),
+              image: AssetImage('assets/images/sklearn.png'),
               height: 80,
               width: 120,
             ),
             Image(
-              image: AssetImage('/images/keras.png'),
+              image: AssetImage('assets/images/keras.png'),
               height: 80,
               width: 80,
             ),
             Image(
-              image: AssetImage('/images/react.png'),
+              image: AssetImage('assets/images/react.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/html.png'),
+              image: AssetImage('assets/images/html.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/css.png'),
+              image: AssetImage('assets/images/css.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/js.png'),
+              image: AssetImage('assets/images/js.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/flask.png'),
+              image: AssetImage('assets/images/flask.png'),
               height: 90,
               width: 90,
             ),
             Image(
-              image: AssetImage('/images/django.png'),
+              image: AssetImage('assets/images/django.png'),
               height: 70,
               width: 70,
             )
@@ -93,57 +93,57 @@ class Libraries extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             Image(
-              image: AssetImage('/images/tf.png'),
+              image: AssetImage('assets/images/tf.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/python.png'),
+              image: AssetImage('assets/images/python.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/dart.png'),
+              image: AssetImage('assets/images/dart.png'),
               height: 80,
               width: 120,
             ),
             Image(
-              image: AssetImage('/images/sklearn.png'),
+              image: AssetImage('assets/images/sklearn.png'),
               height: 80,
               width: 120,
             ),
             Image(
-              image: AssetImage('/images/keras.png'),
+              image: AssetImage('assets/images/keras.png'),
               height: 80,
               width: 80,
             ),
             Image(
-              image: AssetImage('/images/react.png'),
+              image: AssetImage('assets/images/react.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/html.png'),
+              image: AssetImage('assets/images/html.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/css.png'),
+              image: AssetImage('assets/images/css.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/js.png'),
+              image: AssetImage('assets/images/js.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/flask.png'),
+              image: AssetImage('assets/images/flask.png'),
               height: 90,
               width: 90,
             ),
             Image(
-              image: AssetImage('/images/django.png'),
+              image: AssetImage('assets/images/django.png'),
               height: 70,
               width: 70,
             )
@@ -163,57 +163,57 @@ class Libraries extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             Image(
-              image: AssetImage('/images/tf.png'),
+              image: AssetImage('assets/images/tf.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/python.png'),
+              image: AssetImage('assets/images/python.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/dart.png'),
+              image: AssetImage('assets/images/dart.png'),
               height: 80,
               width: 120,
             ),
             Image(
-              image: AssetImage('/images/sklearn.png'),
+              image: AssetImage('assets/images/sklearn.png'),
               height: 80,
               width: 120,
             ),
             Image(
-              image: AssetImage('/images/keras.png'),
+              image: AssetImage('assets/images/keras.png'),
               height: 80,
               width: 80,
             ),
             Image(
-              image: AssetImage('/images/react.png'),
+              image: AssetImage('assets/images/react.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/html.png'),
+              image: AssetImage('assets/images/html.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/css.png'),
+              image: AssetImage('assets/images/css.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/js.png'),
+              image: AssetImage('assets/images/js.png'),
               height: 70,
               width: 70,
             ),
             Image(
-              image: AssetImage('/images/flask.png'),
+              image: AssetImage('assets/images/flask.png'),
               height: 90,
               width: 90,
             ),
             Image(
-              image: AssetImage('/images/django.png'),
+              image: AssetImage('assets/images/django.png'),
               height: 70,
               width: 70,
             )

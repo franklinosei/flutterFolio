@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: {'/portfolio': (context) => Portfolio()},
-      
       home: Home(),
     );
   }

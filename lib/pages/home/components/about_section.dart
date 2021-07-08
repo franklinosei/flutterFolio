@@ -71,14 +71,14 @@ class About extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(250),
                 child: Image(
-                  width: 350,
-                  height: 350,
+                  width: 250,
+                  height: 250,
                   image: AssetImage('images/my_pic.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 120.0),
+                padding: const EdgeInsets.only(left: 80.0),
                 child: Text(
                   'My name is Franklin Osei.\nI am currently a student reading \na Bachelor of Science\nin Computer Science\nI live in Ghana.',
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
@@ -109,9 +109,9 @@ class About extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(350),
                 child: Image(
-                  width: 250,
-                  height: 250,
-                  image: AssetImage('images/my_pic.jpg'),
+                  width: 200,
+                  height: 200,
+                  image: AssetImage('assets/images/my_pic.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),

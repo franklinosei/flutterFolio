@@ -17,7 +17,7 @@ class AreasOfInterest extends StatelessWidget {
   Widget _buildDesktopScreen(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 40, right: 40, left: 40, bottom: 80),
-      // margin: EdgeInsets.only(top: 40),
+      margin: EdgeInsets.only(top: 40),
       // height: MediaQuery.of(context).size.width * 0.35,
       decoration: BoxDecoration(color: kSectionBackground),
 

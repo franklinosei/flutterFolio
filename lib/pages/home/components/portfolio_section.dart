@@ -42,46 +42,44 @@ class PortfolioSection extends ConsumerWidget {
           List<Widget> widgetList = [];
 
           for (var i = 0; i < project.length; i++) {
-            if (i < 4) {
-              widgetList.add(
-                Container(
-                  // padding: EdgeInsets.all(10),
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: Card(
-                    elevation: 10,
-                    semanticContainer: true,
-                    child: Column(
-                      children: [
-                        Image(
-                          image: NetworkImage('${project[i].imageUrl}'),
-                          // width: MediaQuery.of(context).size.width * 0.37,
-                          // height: MediaQuery.of(context).size.width * 0.26,
-                          fit: BoxFit.fill,
-                        ),
-                        ListTile(
-                          // hoverColor: kWhiteColor,
-                          onTap: () {
-                            _launchURL('${project[i].projectUrl}');
-                          },
-                          title: Text('${project[i].title}'),
-                          subtitle: Text('${project[i].description}'),
-                          trailing: project[i].onGithub
-                              ? IconButton(
-                                  onPressed: () {
-                                    _launchURL('${project[i].githubUrl}');
-                                  },
-                                  icon: Icon(
-                                    FontAwesomeIcons.github,
-                                    color: Colors.black,
-                                  ))
-                              : null,
-                        ),
-                      ],
-                    ),
+            widgetList.add(
+              Container(
+                // padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width * 0.4,
+                child: Card(
+                  elevation: 10,
+                  semanticContainer: true,
+                  child: Column(
+                    children: [
+                      Image(
+                        image: NetworkImage('${project[i].imageUrl}'),
+                        // width: MediaQuery.of(context).size.width * 0.37,
+                        // height: MediaQuery.of(context).size.width * 0.26,
+                        fit: BoxFit.fill,
+                      ),
+                      ListTile(
+                        // hoverColor: kWhiteColor,
+                        onTap: () {
+                          _launchURL('${project[i].projectUrl}');
+                        },
+                        title: Text('${project[i].title}'),
+                        subtitle: Text('${project[i].description}'),
+                        trailing: project[i].onGithub
+                            ? IconButton(
+                                onPressed: () {
+                                  _launchURL('${project[i].githubUrl}');
+                                },
+                                icon: Icon(
+                                  FontAwesomeIcons.github,
+                                  color: Colors.black,
+                                ))
+                            : null,
+                      ),
+                    ],
                   ),
                 ),
-              );
-            }
+              ),
+            );
           }
 
           return Column(
@@ -129,8 +127,22 @@ class PortfolioSection extends ConsumerWidget {
             color: kButtonColor,
           );
         }, error: (err, _) {
-          return CircularProgressIndicator(
-            color: kButtonColor,
+          return Column(
+            children: [
+              Icon(
+                FontAwesomeIcons.sadTear,
+                color: kButtonColor,
+                size: 50,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Something went wrong',
+                style: TextStyle(fontSize: 22),
+              ),
+              SizedBox(height: 15),
+            ],
           );
         })
       ]),
