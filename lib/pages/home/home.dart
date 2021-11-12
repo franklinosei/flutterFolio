@@ -87,13 +87,6 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
-  // void _scrollToPortfolio() {
-  //   Scrollable.ensureVisible(
-  //     _aboutGlobaleKey.currentContext,
-  //     duration: const Duration(seconds: 1),
-  //   );
-  // }
-
   Widget _buildDesktop(
     BuildContext context,
     ScrollController controller,
@@ -186,7 +179,8 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           TextSpan(
-                            text: "\n\n\tAi Engineer\n\tMobile Developer",
+                            text:
+                                "\n\n\tMachine Learning Engineer\n\tMobile Developer",
                             style: GoogleFonts.poppins(
                               color: kWhiteColor,
                               fontSize: 20.0,
@@ -508,7 +502,8 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           TextSpan(
-                            text: "\n\n\tAi Engineer\n\tMobile Developer",
+                            text:
+                                "\n\n\tMachine Learning Engineer\n\tMobile Developer",
                             style: GoogleFonts.poppins(
                               color: kWhiteColor,
                               fontSize: 20.0,
@@ -752,7 +747,8 @@ class _HomeState extends State<Home> {
                           ),
                           // TextSpan(text: '\n\t\t|\t          |'),
                           TextSpan(
-                            text: "\n\n\n\tAi Engineer\n Mobile Developer",
+                            text:
+                                "\n\n\n\tMachine Learning Engineer\n Mobile Developer",
                             style: GoogleFonts.poppins(
                               color: kWhiteColor,
                               fontSize: 17.0,
